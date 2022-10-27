@@ -1,3 +1,5 @@
+
+
 // "new" binding this
 function Person(name, age) {
     this.name = name;
@@ -9,6 +11,26 @@ function Person(name, age) {
 
   // Notes: the "new" keyword binds "this" to  the object we substantiate (person1), so person1 will be the "this" keyword.
   // this is the same for when we use "this" for classes
+  
+ //Example: 
+  class Character {
+  constructor(name, weapon) {
+    this.name = name;
+    this.weapon = weapon;
+  }
+  attack() {
+    return 'atack with ' + this.weapon
+  }
+}
+
+class Elf extends Character { 
+  constructor(name, weapon, type) {
+    // console.log('what am i?', this); this gives an error
+    super(name, weapon) 
+    console.log('what am i?', this); // Note: the "this" keyword refers to Elf
+    this.type = type;
+  }
+}
 
 //implicit binding
 const person = {
