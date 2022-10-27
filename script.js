@@ -31,6 +31,20 @@ class Elf extends Character {
     this.type = type;
   }
 }
+class Ogre extends Character {
+  constructor(name, weapon, color) {
+    super(name, weapon);
+    this.color = color;
+  }
+  makeFort() { // this is like extending our prototype.
+    return 'strongest fort in the world made'
+  }
+}
+
+const houseElf = new Elf('Dolby', 'cloth', 'house')
+houseElf.attak() 
+const shrek = new Ogre('Shrek', 'club', 'green')
+shrek.makeFort()
 
 //implicit binding
 const person = {
